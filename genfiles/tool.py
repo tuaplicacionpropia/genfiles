@@ -1,6 +1,10 @@
-#!/usr/bin/env python2.7
-#coding:utf-8
+r"""Command-line tool to bslideshow
 
+Usage::
+
+    $ bs_footage /home/mivideo.mp4 foreground.mp4 /output/fout.mp4
+
+"""
 import sys
 import genfiles
 
