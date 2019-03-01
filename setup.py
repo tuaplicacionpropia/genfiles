@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='genfiles',
-    version='0.0.15',
+    version='0.0.16',
     url='https://github.com/tuaplicacionpropia/genfiles',
     download_url='https://github.com/tuaplicacionpropia/genfiles/archive/master.zip',
     author=u'tuaplicacionpropia.com',

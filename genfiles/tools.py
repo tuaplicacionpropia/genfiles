@@ -35,7 +35,7 @@ class JinjaGenFiles:
       #print(str(data))
 
     file_loader = jinja2.FileSystemLoader(baseDir)
-    env = jinja2.Environment(loader=file_loader)
+    env = jinja2.Environment(loader=file_loader, extensions=['jinja2.ext.do'])
     env.filters['myUpper'] = self.myUpper
     env.tests['verdadero'] = self.is_verdadero
     env.tests['falso'] = self.is_falso
