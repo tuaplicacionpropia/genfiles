@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='genfiles',
-    version='0.0.01',
+    version='0.0.02',
     url='https://github.com/tuaplicacionpropia/genfiles',
     download_url='https://github.com/tuaplicacionpropia/genfiles/archive/master.zip',
     author=u'tuaplicacionpropia.com',
@@ -15,9 +15,9 @@ setup(
     classifiers=[
       'Development Status :: 4 - Beta',
       'License :: OSI Approved :: MIT License',
-      'Programming Language :: Python', 
-      'Programming Language :: Python :: 2.7', 
-      'Intended Audience :: Developers', 
+      'Programming Language :: Python',
+      'Programming Language :: Python :: 2.7',
+      'Intended Audience :: Developers',
       'Topic :: Multimedia :: Graphics',
     ],
     scripts=[
