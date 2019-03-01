@@ -1,1 +1,1 @@
-@python -m genfiles.tool gf_generate %*
+@python -m genfiles.tool generate %*

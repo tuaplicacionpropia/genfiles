@@ -98,7 +98,7 @@ def test4():
   output = template.render(data=person)
   print(output)
 
-if False and __name__ == '__main__':
+if True and __name__ == '__main__':
   tools = GenFiles()
   #tools.generate("hello.txt")
   #tools.generate("data.txt", dataPath="/media/jmramoss/ALMACEN/pypi/genfiles/genfiles/data.hjson")
