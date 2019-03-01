@@ -36,6 +36,9 @@ class JinjaGenFiles:
 
     file_loader = jinja2.FileSystemLoader(baseDir)
     env = jinja2.Environment(loader=file_loader)
+    env.filters['myUpper'] = self.myUpper
+    env.tests['verdadero'] = self.is_verdadero
+    env.tests['falso'] = self.is_falso
     template = env.get_template(templateName)
 
     if outputPath is None:
@@ -64,6 +67,15 @@ class JinjaGenFiles:
     result = hjson.load(fp)
     return result
 
+  def myUpper(self, value, suffix='00'):
+    suffix = suffix if suffix is not None else ''
+    return value.upper() + suffix
+
+  def is_verdadero(value):
+    return True if value == 'True' else False
+
+  def is_falso(value):
+    return False if value == 'True' else True
 
 
 def test():
