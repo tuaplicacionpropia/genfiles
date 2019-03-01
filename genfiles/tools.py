@@ -9,7 +9,6 @@ import codecs
 class JinjaGenFiles:
 
   def __init__ (self):
-    self.__var__ = True
     pass
 
   def generate (self, templatePath, dataPath=None, outputPath=None):
