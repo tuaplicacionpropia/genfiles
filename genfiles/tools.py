@@ -6,7 +6,7 @@ import os
 import jinja2
 import codecs
 
-class GenFiles:
+class JinjaGenFiles:
 
   def __init__ (self):
     self.__var__ = True
@@ -99,7 +99,7 @@ def test4():
   print(output)
 
 if True and __name__ == '__main__':
-  tools = GenFiles()
+  tools = JinjaGenFiles()
   #tools.generate("hello.txt")
   #tools.generate("data.txt", dataPath="/media/jmramoss/ALMACEN/pypi/genfiles/genfiles/data.hjson")
   #tools.generate("data.txt", dataPath="/media/jmramoss/ALMACEN/pypi/genfiles/genfiles/data.hjson", outputPath="/media/jmramoss/ALMACEN/pypi/genfiles/genfiles/data.out")

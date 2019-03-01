@@ -18,7 +18,7 @@ def main():
 #args: templatePath, dataPath=None, outputPath=None
 def generate (args):
   print("executing genfiles " + str(args))
-  gf = genfiles.GenFiles()
+  gf = genfiles.JinjaGenFiles()
   gf.generate(*args)
 
 if __name__ == '__main__':
