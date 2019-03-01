@@ -71,10 +71,10 @@ class JinjaGenFiles:
     suffix = suffix if suffix is not None else ''
     return value.upper() + suffix
 
-  def is_verdadero(value):
+  def is_verdadero(self, value):
     return True if value == 'True' else False
 
-  def is_falso(value):
+  def is_falso(self, value):
     return False if value == 'True' else True
 
 
