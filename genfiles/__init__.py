@@ -1,1 +1,1 @@
-from tools import JinjaGenFiles
+from genfiles.tools import JinjaGenFiles
