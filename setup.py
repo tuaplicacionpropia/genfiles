@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='genfiles',
-    version='0.0.02',
+    version='0.0.03',
     url='https://github.com/tuaplicacionpropia/genfiles',
     download_url='https://github.com/tuaplicacionpropia/genfiles/archive/master.zip',
     author=u'tuaplicacionpropia.com',
@@ -21,7 +21,7 @@ setup(
       'Topic :: Multimedia :: Graphics',
     ],
     scripts=[
-      'bin/genfiles.cmd', 'bin/genfiles'
+      'bin/gf_generate.cmd', 'bin/gf_generate'
     ],
     packages=find_packages(exclude=['tests']),
     zip_safe=False,

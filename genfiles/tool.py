@@ -12,11 +12,10 @@ def main():
   getattr(sys.modules[__name__], sys.argv[1])(args)
 
 #args: templatePath, dataPath=None, outputPath=None
-def genfiles (args):
+def gf_generate (args):
   #print("executing genfiles " + str(args))
   gf = genfiles.GenFiles()
   gf.generate(*args)
-  return result
 
 if __name__ == '__main__':
     main()
