@@ -27,8 +27,7 @@ def generate (args):
 #args: type
 def help (args):
   #print("executing help " + str(args))
-  gf = genfiles.JinjaGenFiles()
-  gf._show_help(*args)
+  _show_help(*args)
 
 def printFile (filePath):
   with open(filePath, 'r') as fin:
