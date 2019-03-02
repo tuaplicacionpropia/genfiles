@@ -27,3 +27,17 @@ realist:
 
 name: Mendoza2
 animal: Periquito2
+
+list_of_user: [
+  {
+    username: dog
+    realname: Myke Furor
+    description: Fighter
+  }
+  {
+    username: cat
+    realname: Linda Ross
+    description: Writer
+  }
+]
+
