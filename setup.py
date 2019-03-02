@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='genfiles',
-    version='0.0.20',
+    version='0.0.21',
     url='https://github.com/tuaplicacionpropia/genfiles',
     download_url='https://github.com/tuaplicacionpropia/genfiles/archive/master.zip',
     author=u'tuaplicacionpropia.com',
@@ -26,7 +26,7 @@ setup(
     packages=find_packages(exclude=['tests']),
     #package_data={},
     #package_data={'': ['license.txt']},
-    package_data={'genfiles/templates': ['*.txt', '*.hjson']},
+    package_data={'genfiles': ['templates/*.txt', 'templates/*.hjson']},
     zip_safe=False,
     include_package_data=True,
     platforms='any',
