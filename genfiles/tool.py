@@ -68,7 +68,7 @@ def _show_help (type=None):
     copyTemplate('header.txt', tmpDir)
     copyTemplate('macros.txt', tmpDir)
     copyTemplate('parent.txt', tmpDir)
-    os.chdir(tmpDir)
+    print("cd " + tmpDir)
     print("Examples of 'test/generate files':")
     print("$ gf_generate base.txt data.hjson")
     print("$ gf_generate base.txt data.hjson base.out")

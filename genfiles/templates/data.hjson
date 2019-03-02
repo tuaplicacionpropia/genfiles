@@ -25,8 +25,18 @@ realist:
   Now you are half full.
   '''
 
-name: Mendoza2
-animal: Periquito2
+name: Julito3
+animal: Murciélago3
+truth: True
+truth2: False
+
+colors: [
+  azul
+  verde
+  amarillo
+]
+
+title: Mi título
 
 list_of_user: [
   {
