@@ -40,12 +40,20 @@ class JinjaGenFiles:
     if dataClass is not None:
       classPkgIdx = dataClass.rfind(".")
       classPkg = dataClass[0:classPkgIdx]
+
+      components = dataClass.split('.')
+      mod = __import__(components[0])
+      for comp in components[1:]:
+        mod = getattr(mod, comp)
+      itemClass = mod
+      '''
       try:
         fp, pathname, description = imp.find_module(classPkg)
         itemClass = imp.load_module("%s" % (dataClass), fp, pathname, description)
         print itemClass
       except Exception as e:
         print e
+      '''
 
 
     if templatePath is not None and not os.path.isabs(templatePath):
@@ -160,6 +168,6 @@ if True and __name__ == '__main__':
   #tools.generate("data.txt", dataPath="/media/jmramoss/ALMACEN/pypi/genfiles/genfiles/data.hjson")
   #tools.generate("data.txt", dataPath="/media/jmramoss/ALMACEN/pypi/genfiles/genfiles/data.hjson", outputPath="/media/jmramoss/ALMACEN/pypi/genfiles/genfiles/data.out")
   #tools.generate("data.txt", dataPath="data.hjson", outputPath="data3.out")
-  tools.generate("templates/items.txt", dataPath="class://templates/items.hjson?type=genfiles.Item&list=true", outputPath="templates/items.out")
+  tools.generate("templates/items.txt", dataPath="class://templates/items.hjson?type=genfiles.templates.Item&list=true", outputPath="templates/items.out")
   #test4()
   #print("HOLA2")
