@@ -57,6 +57,10 @@ def _show_help (type=None):
     printTemplate('header.txt')
     printTemplate('parent.txt')
     printTemplate('child.txt')
+  elif type == 'class':
+    printTemplate('items.hjson')
+    printTemplate('item.py')
+    printTemplate('items.txt')
   elif type == 'data':
     printTemplate('data.hjson')
   elif type == 'test':
@@ -68,15 +72,18 @@ def _show_help (type=None):
     copyTemplate('header.txt', tmpDir)
     copyTemplate('macros.txt', tmpDir)
     copyTemplate('parent.txt', tmpDir)
+    copyTemplate('items.txt', tmpDir)
+    copyTemplate('items.hjson', tmpDir)
     print("cd " + tmpDir)
     print("Examples of 'test/generate files':")
     print("$ gf_generate base.txt data.hjson")
     print("$ gf_generate base.txt data.hjson base.out")
     print("$ gf_generate child.txt data.hjson")
   else:
-    print("options: base, inheritance, data, test.")
+    print("options: base, inheritance, class, data, test.")
     print("- base: Show a template to learn the main stuffs.")
     print("- inheritance: Show some templates to learn the inheritance.")
+    print("- class: Show an example of class object.")
     print("- data: Show an example of data file.")
     print("- test: Download templates to use in learning.")
     print("")
