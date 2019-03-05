@@ -79,6 +79,7 @@ def _show_help (type=None):
     print("$ gf_generate base.txt data.hjson")
     print("$ gf_generate base.txt data.hjson base.out")
     print("$ gf_generate child.txt data.hjson")
+    print('$ gf_generate items.txt "class://items.hjson?type=genfiles.templates.item.Item&list=true" items.out')
   else:
     print("options: base, inheritance, class, data, test.")
     print("- base: Show a template to learn the main stuffs.")
@@ -91,6 +92,7 @@ def _show_help (type=None):
     print("$ gf_generate template.ext1")
     print("$ gf_generate template.ext1 data.ext2")
     print("$ gf_generate template.ext1 data.ext2 output.ext3")
+    print('$ gf_generate items.txt "class://items.hjson?type=genfiles.templates.item.Item&list=true" items.out')
 
 if __name__ == '__main__':
     main()
