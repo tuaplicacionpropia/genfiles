@@ -23,13 +23,13 @@ class JinjaGenFiles:
     dataListClass = False
     itemClass = None
     if checkDataStr and dataPath.startswith("class://"):
-      print("ES CLASS")
+      #print("ES CLASS")
       dataPath = dataPath[8:]
-      print("dataPath = " + dataPath)
+      #print("dataPath = " + dataPath)
       dataIdx = dataPath.find('?')
       if dataIdx > -1:
         dataArgs = dataPath[(dataIdx + 1):]
-        print("dataArgs = " + dataArgs)
+        #print("dataArgs = " + dataArgs)
         arrayDataArgs = dataArgs.split('&')
         for itemArrayDataArgs in arrayDataArgs:
           valuesItemDataArg = itemArrayDataArgs.split('=')
