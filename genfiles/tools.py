@@ -5,7 +5,8 @@ import hjson
 import os
 import jinja2
 import codecs
-import imp
+#import imp
+import importlib
 
 class JinjaGenFiles:
 
@@ -40,12 +41,24 @@ class JinjaGenFiles:
     if dataClass is not None:
       classPkgIdx = dataClass.rfind(".")
       classPkg = dataClass[0:classPkgIdx]
+      className = dataClass[(classPkgIdx+1):]
 
-      components = dataClass.split('.')
-      mod = __import__(components[0])
-      for comp in components[1:]:
+      #components = dataClass.split('.')
+      '''
+      mod = __import__(components[0]+"."+components[1])
+      print(str(dir(mod)))
+      for comp in components[2:]:
+        print(str(comp))
         mod = getattr(mod, comp)
-      itemClass = mod
+        print(str(dir(mod)))
+      '''
+      #mod = __import__(classPkg)
+      mod = importlib.import_module(classPkg)
+      #print(str(dir(mod)))
+      #print("classPkg5 = " + str(classPkg))
+      #print("className5 = " + str(className))
+      itemClass = getattr(mod, className)
+      #print(str(itemClass))
       '''
       try:
         fp, pathname, description = imp.find_module(classPkg)
@@ -54,7 +67,6 @@ class JinjaGenFiles:
       except Exception as e:
         print e
       '''
-
 
     if templatePath is not None and not os.path.isabs(templatePath):
       templatePath = os.path.join(cwd, templatePath)

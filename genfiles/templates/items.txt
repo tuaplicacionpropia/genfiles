@@ -1,5 +1,5 @@
 {% for item in data %}
-- {{ item.name }} + {{ item.surnames }}
-- {{ item.fullName() }}
+- name2 = {{ item.name }} || surnames = {{ item.surnames }}
+- fullName2 = {{ item.fullName() }}
 {% endfor %}
 

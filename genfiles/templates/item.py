@@ -11,7 +11,7 @@ class Item(object):
     self.surnames = ""
 
   def fullName (self):
-    return self.name + " " + self.surnames
+    return (self.name if self.name is not None else "") + " " + (self.surnames if self.surnames is not None else "")
 
   @staticmethod
   def load (data):
@@ -21,7 +21,7 @@ class Item(object):
     if type(data) == 'str':
       fp = codecs.open(data, mode='r', encoding='utf-8')
       dataObj = hjson.load(fp)
-    elif type(data) == 'dict':
+    elif type(data) == 'dict' or isinstance(data, dict):
       dataObj = data
 
     result.name = dataObj['name'] if 'name' in dataObj else None
