@@ -61,6 +61,8 @@ def _show_help (type=None):
     printTemplate('items.hjson')
     printTemplate('item.py')
     printTemplate('items.txt')
+  elif type == 'css':
+    printTemplate('css.txt')
   elif type == 'data':
     printTemplate('data.hjson')
   elif type == 'test':
@@ -74,17 +76,20 @@ def _show_help (type=None):
     copyTemplate('parent.txt', tmpDir)
     copyTemplate('items.txt', tmpDir)
     copyTemplate('items.hjson', tmpDir)
+    copyTemplate('css.txt', tmpDir)
     print("cd " + tmpDir)
     print("Examples of 'test/generate files':")
     print("$ gf_generate base.txt data.hjson")
     print("$ gf_generate base.txt data.hjson base.out")
     print("$ gf_generate child.txt data.hjson")
     print('$ gf_generate items.txt "class://items.hjson?type=genfiles.templates.item.Item&list=true" items.out')
+    print("$ gf_generate css.txt")
   else:
     print("options: base, inheritance, class, data, test.")
     print("- base: Show a template to learn the main stuffs.")
     print("- inheritance: Show some templates to learn the inheritance.")
     print("- class: Show an example of class object.")
+    print("- css: Show css files.")
     print("- data: Show an example of data file.")
     print("- test: Download templates to use in learning.")
     print("")
@@ -93,6 +98,7 @@ def _show_help (type=None):
     print("$ gf_generate template.ext1 data.ext2")
     print("$ gf_generate template.ext1 data.ext2 output.ext3")
     print('$ gf_generate items.txt "class://items.hjson?type=genfiles.templates.item.Item&list=true" items.out')
+    print("$ gf_generate css.txt")
 
 if __name__ == '__main__':
     main()
