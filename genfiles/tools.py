@@ -7,6 +7,7 @@ import jinja2
 import codecs
 #import imp
 import importlib
+import uuid
 
 class JinjaGenFiles:
 
@@ -102,6 +103,7 @@ class JinjaGenFiles:
     file_loader = jinja2.FileSystemLoader(baseDir)
     env = jinja2.Environment(loader=file_loader, extensions=['jinja2.ext.do'])
     env.filters['myUpper'] = self.myUpper
+    env.filters['uuid'] = self.myUuid
     env.tests['verdadero'] = self.is_verdadero
     env.tests['falso'] = self.is_falso
     template = env.get_template(templateName)
@@ -135,6 +137,14 @@ class JinjaGenFiles:
   def myUpper(self, value, suffix='00'):
     suffix = suffix if suffix is not None else ''
     return value.upper() + suffix
+
+  def myUuid(self, value=None):
+    result = None
+    if value is None:
+      result = str(uuid.uuid4())
+    else:
+      result = str(uuid.uuid5(uuid.NAMESPACE_URL, value))
+    return result
 
   def is_verdadero(self, value):
     return True if value == 'True' else False
